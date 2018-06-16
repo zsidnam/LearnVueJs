@@ -1,4 +1,4 @@
-# learn-vue-two
+# LearnVueJs
 
 > A test project to learn Vue.js.
 
