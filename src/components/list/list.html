@@ -1,10 +1,31 @@
 <div class="list-container">
   <span class="title">{{title}}</span>
+  <p>{{description}}</p>
   <ul>
-    <div v-for="item in listItems"></div>
-    <li v-for="item in listItems">{{item}}</li>
-    <input type="text"
-           v-model="newListItem">
-    <button @click="addListItem">Add</button>
+    <li v-for="item in items"
+        :key="item.id"
+        :class="{ completed: item.isComplete }">
+
+      <a @click.prevent="removeListItem(item.id)">X</a>
+
+      <span>{{item.title}}</span>
+
+      <input type="checkbox"
+             v-model="item.isComplete">
+    </li>
+
+    <label>
+      <input type="text"
+             v-model="newListItemTitle">
+
+      <button @click.prevent="addListItem">Add</button>
+    </label>
+
+    <label>
+      <button class="rmv"
+              @click.prevent="removeCompletedItems">
+        Remove Completed Items
+      </button>
+    </label>
   </ul>
 </div>

@@ -10,6 +10,10 @@ body {
   margin: 0px;
 }
 
+.main-content {
+	margin: 20px 25% 20px 25%;
+}
+
 h1, h2 {
     font-weight: normal;
 }
@@ -28,8 +32,19 @@ a {
     color: #42b983;
 }
 
-.main-content {
-  text-align: left;
-  margin-left: 20px;
-  margin-right: 20px;
+button {
+	height: 30px;
+	background-color: #0ece71;
+	color: white;
+	border: black 1px solid;
+	border-radius: 5px;
+	min-width: 50px;
+
+	&.rmv {
+		background-color: #f45c41;
+	}
+
+	&.save {
+		background-color: #419df4;
+	}
 }

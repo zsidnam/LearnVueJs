@@ -9,19 +9,45 @@ var testLists = [
   {
     id: 1,
     title: 'Grocery List',
+    description: 'A list of groceries needed from the store',
     listItems: [
-      'milk',
-      'eggs',
-      'bread'
+      {
+        id: 1,
+        title: 'milk',
+        isComplete: true
+      },
+      {
+        id: 2,
+        title: 'eggs',
+        isComplete: false
+      },
+      {
+        id: 3,
+        title: 'bread',
+        isComplete: false
+      }
     ]
   },
   {
     id: 2,
     title: 'To Do List',
+    description: 'A list of chores to do around the house',
     listItems: [
-      'clean room',
-      'take out trash',
-      'wash car'
+      {
+        id: 1,
+        title: 'wash car',
+        isComplete: false
+      },
+      {
+        id: 2,
+        title: 'clean room',
+        isComplete: false
+      },
+      {
+        id: 3,
+        title: 'make dinner',
+        isComplete: false
+      }
     ]
   }
 ];
@@ -32,6 +58,11 @@ export default {
     return {
       lists: testLists
     };
+  },
+  methods: {
+    saveLists: function () {
+      alert('Coming Soon!');
+    }
   }
 };
 </script>

@@ -1,5 +1,9 @@
 .list-container {
   display: block;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  max-width: 400px;
+  text-align: left;
 }
 
 .title {
@@ -7,7 +11,28 @@
 }
 
 ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
+
   li {
     display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &.completed {
+      text-decoration: line-through;
+    }
+
+    a {
+      cursor: pointer;
+      color: #f45c41;
+      font-size: 14px;
+      padding-right: 15px;
+    }
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
   }
 }

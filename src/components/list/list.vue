@@ -10,17 +10,37 @@ export default {
   props: {
     id: Number,
     title: String,
+    description: String,
     listItems: Array
   },
   data: function() {
     return {
-      newListItem: null
+      items: this.listItems ? this.listItems.slice() : [],
+      newListItemTitle: null
     };
   },
   methods: {
     addListItem: function () {
-      if (!this.newListItem || this.newListItem == '') return;
-      this.listItems.push(this.newListItem);
+      if (!this.newListItemTitle || this.newListItemTitle == '') return;
+
+      let tempId = (this.items.length > 0)
+                    ? Math.max.apply(Math, this.items.map(x => x.id)) + 1
+                    : 1;
+
+      let newListItem = {
+        id: tempId,
+        title: this.newListItemTitle,
+        isComplete: false
+      }
+
+      this.items.push(newListItem);
+      this.newListItemTitle = null;
+    },
+    removeCompletedItems: function () {
+      this.items = this.items.filter(x => !x.isComplete);
+    },
+    removeListItem: function (id) {
+      this.items = this.items.filter(x => x.id !== id);
     }
   }
 };
