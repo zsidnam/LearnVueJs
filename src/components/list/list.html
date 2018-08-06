@@ -1,0 +1,10 @@
+<div class="list-container">
+  <span class="title">{{title}}</span>
+  <ul>
+    <div v-for="item in listItems"></div>
+    <li v-for="item in listItems">{{item}}</li>
+    <input type="text"
+           v-model="newListItem">
+    <button @click="addListItem">Add</button>
+  </ul>
+</div>

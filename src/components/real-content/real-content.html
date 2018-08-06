@@ -1,5 +1,12 @@
 <div>
   Real Content
+  <div id="lists">
+    <z-list v-for="list in lists"
+            :key="list.id"
+            :id="list.id"
+            :title="list.title"
+            :listItems="list.listItems"></z-list>
+  </div>
   <router-link to="/test">
     Click Here for Test
   </router-link>
